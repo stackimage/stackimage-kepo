@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-<title>Design BCA Mobile | SI</title>
+<title>Design Grocery App | SI</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta charset=-"utf-8">
@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css">
   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="/assets/SI.jpg" type="image/png">
 </head>
 <body> 
 <div class="outer">
@@ -26,13 +27,13 @@
             <!--Slider-->
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="/assets/img/Design-3/1.jpg" class="d-block w-100" alt="...">
+                <img src="/assets/img/Design-3/1.jpg" class="d-block w-100" alt="Stack Image">
               </div>
               <div class="carousel-item">
-                <img src="/assets/img/Design-3/2.jpg" class="d-block w-100" alt="...">
+                <img src="/assets/img/Design-3/2.jpg" class="d-block w-100" alt="Stack Image">
               </div>
               <div class="carousel-item">
-                <img src="/assets/img/Design-3/3.jpg" class="d-block w-100" alt="...">
+                <img src="/assets/img/Design-3/3.jpg" class="d-block w-100" alt="Stack Image">
               </div> 
               <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -59,12 +60,23 @@
             DESCRIPTION
           </div> 
           <div class="text5">
-          Design Aplikasi Musik By @aweka_design Yang Dapat Di Download Secara Gratis.
+          Design Grocery App Mobile By @aweka_design Yang Dapat Di Download Secara Gratis.
           </div> 
           <div class="btn-wrapper">
-              <a href="File/">
-            <span class="btn">Download</span> 
-            </a>
+            <div class="container">
+              <a class="btn">Download Files <i class="fas fa-download"></i></a>
+              <div class="countdown">
+                  
+              </div>
+              <div class="waiting-text">
+                  Please Wait..
+              </div>
+              <div class="download-text" style="text-align: center;">
+                  If the download did't start automatically, <a href="Design Grocery app - Stack Image.rar" class="download-link">
+                      Click Here
+                  </a>
+              </div>
+          </div>
             <div class="social-icons">
               <a href="https://api.whatsapp.com/send?text=Download Design Grocery app | Stack Image Link : https://stackimage.github.io/Download/Design-Grocery-app/" style="text-decoration: none;">
               <i class="fab fa-whatsapp"></i>
@@ -82,45 +94,7 @@
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+<script src="script.js"></script>
 
-<script type="text/javascript">
-
-  $(document).ready(function () {
-      $("button").click(function (event) {
-          event.preventDefault();
-          CopyToClipboard("Download Design Grocery app | Stack Image Link : https://stackimage.github.io/Download/Design-Grocery-app/", true, "Value copied");
-          alert('Copied')
-      });
-  });
-
-  function CopyToClipboard(value, showNotification, notificationText) {
-      var $temp = $("<input>");
-      $("body").append($temp);
-      $temp.val(value).select();
-      document.execCommand("copy");
-      $temp.remove();
-
-      if (typeof showNotification === 'undefined') {
-          showNotification = true;
-      }
-      if (typeof notificationText === 'undefined') {
-          notificationText = "Copied to clipboard";
-      }
-
-      var notificationTag = $("div.copy-notification");
-      if (showNotification && notificationTag.length == 0) {
-          notificationTag = $("<div/>", { "class": "copy-notification", text: notificationText });
-          $("body").append(notificationTag);
-
-          notificationTag.fadeIn("slow", function () {
-              setTimeout(function () {
-                  notificationTag.fadeOut("slow", function () {
-                      notificationTag.remove();
-                  });
-              }, 1000);
-          });
-      }
-  }
-</script>
 </body>
 </html>
