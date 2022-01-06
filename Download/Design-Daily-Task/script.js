@@ -15,7 +15,7 @@ downloadButton.addEventListener("click", () => {
         if (timeleft <= 0) {
             clearInterval(downloadtimer);
             waitText.style.display = "block";
-            let download_href = "Design BCA Mobile - Stack Image.rar";
+            let download_href = "Design Daily Task - Stack Image.rar";
             window.location.href = download_href;
             downloadLink.href = download_href;
 
@@ -29,7 +29,8 @@ downloadButton.addEventListener("click", () => {
   $(document).ready(function () {
       $("button").click(function (event) {
           event.preventDefault();
-          CopyToClipboard("Download Design BCA Mobile | Stack Image Link : https://stackimage.github.io/Download/Design-Bca-Mobile/", true, "Value copied");
+          CopyToClipboard("Download Design Daily Task | Stack Image Link : https://stackimage.github.io/Download/Design-Daily-Task/", true, "Value copied");
+          alert('Copied')
       });
   });
 
@@ -61,23 +62,3 @@ downloadButton.addEventListener("click", () => {
           });
       }
   }
-
-
-  const shareData = {
-    title: 'Stack Image',
-    text: '"Download Design BCA Mobile | Stack Image Link :',
-    url: 'https://stackimage.github.io/Download/Design-Bca-Mobile/'
-  }
-
-  const btn = document.querySelector('button');
-  const resultPara = document.querySelector('.result');
-
-  // Share must be triggered by "user activation"
-  btn.addEventListener('click', async () => {
-    try {
-      await navigator.share(shareData)
-      resultPara.textContent = 'MDN shared successfully'
-    } catch(err) {
-      resultPara.textContent = 'Error: ' + err
-    }
-  });

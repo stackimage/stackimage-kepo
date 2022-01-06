@@ -128,17 +128,17 @@
 	font-size: 12px;
 	box-shadow: 2px 5px 20px rgba(32,57,90,0.479);
 }
-.social-icons .ri-share-forward-fill{
+.social-icons .fa-link{
 	background: #C92228;
-	width: 40px;
-	height: 40px;
+	width: 30px;
+	height:30px;
 	line-height: 30px;
 	text-align: center;
 	color:#fff;
 	margin-top: 15px;
 	margin-bottom: 15px;
 	border-radius: 50%;
-	font-size: 24px;
+	font-size: 12px;
 	box-shadow: 2px 5px 20px rgba(32,57,90,0.479);
 	border-color: #C92228;
 }
