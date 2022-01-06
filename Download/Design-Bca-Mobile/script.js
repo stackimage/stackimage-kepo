@@ -65,7 +65,7 @@ downloadButton.addEventListener("click", () => {
 
   const shareData = {
     title: 'Stack Image',
-    text: '"Download Design BCA Mobile | Stack Image Link :',
+    text: 'Download Design BCA Mobile | Stack Image Link : ',
     url: 'https://stackimage.github.io/Download/Design-Bca-Mobile/'
   }
 
@@ -76,7 +76,7 @@ downloadButton.addEventListener("click", () => {
   btn.addEventListener('click', async () => {
     try {
       await navigator.share(shareData)
-      resultPara.textContent = 'MDN shared successfully'
+      resultPara.textContent = 'Stack Image shared successfully'
     } catch(err) {
       resultPara.textContent = 'Error: ' + err
     }

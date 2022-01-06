@@ -30,7 +30,6 @@ downloadButton.addEventListener("click", () => {
       $("button").click(function (event) {
           event.preventDefault();
           CopyToClipboard("Download Design BCA Mobile | Stack Image Link : https://stackimage.github.io/Download/Design-Grocery-app/", true, "Value copied");
-          alert('Copied')
       });
   });
 
@@ -62,3 +61,23 @@ downloadButton.addEventListener("click", () => {
           });
       }
   }
+
+
+  const shareData = {
+    title: 'Stack Image',
+    text: 'Download Design Grocery App | Stack Image Link : ',
+    url: 'https://stackimage.github.io/Download/Design-Grocery-app/'
+  }
+
+  const btn = document.querySelector('button');
+  const resultPara = document.querySelector('.result');
+
+  // Share must be triggered by "user activation"
+  btn.addEventListener('click', async () => {
+    try {
+      await navigator.share(shareData)
+      resultPara.textContent = 'Stack Image shared successfully'
+    } catch(err) {
+      resultPara.textContent = 'Error: ' + err
+    }
+  });
