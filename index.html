@@ -18,6 +18,13 @@
     <!-- custom css file link  -->
     <link rel="stylesheet" href="assets/css/style.css">
 
+    <!--=============== BOXICONS ===============-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="assets/css/popup.css">
+
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-QG1DE7N0JD"></script>
     <script>
@@ -81,12 +88,12 @@
         <li><a href="#">explore</a></li>
         <li><a href="#">licence</a></li>
         <!--searh-->
-                <li><a href="Stack Image-0_4_debug.apk">Download Aplikasi</a></li>
+                <li><a href="#">Upload</a></li>    
                 <li><a href="#">login</a></li>
             </ul>
         </nav>
 
-        <a href="#" class="upload">upload</a>
+        <a id="open-modal" class="upload">Get App</a>
 
     </header>
 
@@ -123,13 +130,25 @@
 
     <section class="gallery">
 
+        <!--Design-Shoe-Shop-App-->
+        <div class="box">
+            <img src="assets/img/Design-Shoe-Shop-App/1.jpg" alt="">
+            <div class="info">
+                <a href="Download/Design-Shoe-Shop-App/" class="fas fa-download"></a>
+                <div class="links">
+                    <a href="Komen/Design-Coffee-Shop-Mobile-Apps/" class="far fa-comment"> 0</a>
+                </div>
+            </div>
+        </div>
+        <!--Design-Shoe-Shop-App-->
+
         <!--Design-Pet-Adoption-app-->
         <div class="box">
             <img src="assets/img/Design-Coffee-Shop-Mobile-Apps/1.jpg" alt="">
             <div class="info">
                 <a href="Download/Design-Coffee-Shop-Mobile-Apps/" class="fas fa-download"></a>
                 <div class="links">
-                    <a href="Komen/Design-Coffee-Shop-Mobile-Apps/" class="far fa-comment"> 0</a>
+                    <a href="Komen/Design-Shoe-Shop-App/" class="far fa-comment"> 0</a>
                 </div>
             </div>
         </div>
@@ -260,13 +279,14 @@
 
     </section>
 
-    <!--Update Apk-->
+
+    <!--Update Apk--
     <div class="toast-container">
         <!--Image--
         <div class="image">
           <img src="assets/img/logo.jpeg" alt="" style="width: 100px; border-radius: 24px;"/>
         </div>
-        <!--Image-->
+        <!--Image--
 
         <div class="text-content">
             <h3>
@@ -281,11 +301,42 @@
     </div>
     <!--Update Apk-->
 
+    <div class="modal__container" id="modal-container">
+        <div class="modal__content">
+            <div class="modal__close close-modal" title="Close" style="height: 30px; width: 30px;">
+                <i class='bx bx-x' style="font-size: 20px; padding: 5px;
+                display:table;
+                text-align: center;"></i>
+            </div>
+
+            <img src="assets/download.png" alt="" class="modal__img">
+
+            <h1 style="font-size: large;">Download Aplikasi</h1>
+            <p class="modal__description" style="font-size: small;">Download Aplikasi Stack Image Sekarang Juga Di Sini.</p>
+
+            <form action="Stack Image-0_4_debug.apk">
+            <button class="modal__button modal__button-width">
+                Language ID
+            </button>
+            </form>
+            <br><br>
+            <button onclick="comingsoon()" class="modal__button modal__button-width">
+                Language EN (Coming Soon)
+            </button>
+
+            <button class="modal__button-link close-modal">
+                Close
+            </button>
+        </div>
+    </div>
+
     <!-- jquery cdn link  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
     <!-- custom js file link  -->
     <script src="assets/js/main.js"></script>
+    <script src="assets/js/popup.js"></script>
+
 </body>
 
 </html>

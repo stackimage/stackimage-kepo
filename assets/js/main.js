@@ -21,7 +21,7 @@ $(document).ready(function(){
 
 });
 
-/*=============== Banner ===============*/
+/*=============== Banner ===============*
 const toastContainer = document.querySelector(".toast-container");
 const closeBtn = document.querySelector(".toast-container .close");
 const toastLink = document.querySelector(".toast-container a");
@@ -35,12 +35,16 @@ if (!localStorage.getItem("displayToast")) {
 const stopDisplayingToast = () => {
   /*=============== cookie ===============*
   localStorage.setItem("displayToast", true);
-  /*=============== Notif ===============*/
+  /*=============== Notif ===============*
   toastContainer.classList.remove("active");
 };
-/*=============== Notif ===============*/
+/*=============== Notif ===============*
 closeBtn.addEventListener("click", stopDisplayingToast);
 toastLink.addEventListener("click", stopDisplayingToast);
 
 
 /*=============== Notif ===============*/
+
+function comingsoon() {
+  alert("This App Coming Soon");
+}
