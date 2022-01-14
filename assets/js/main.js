@@ -1,30 +1,54 @@
+let menu = document.querySelector('.menu-icon');
 
-$(document).ready(function(){
+let navbar = document.querySelector('.menu');
 
-    $('#menu').click(function(){
-        $(this).toggleClass('fa-times');
-        $('.navbar').toggleClass('nav-toggle');
-    });
 
-    $(window).on('scroll load',function(){
 
-        $('#menu').removeClass('fa-times');
-        $('.navbar').removeClass('nav-toggle');
+menu.onclick = () => {
 
-        if($(window).scrollTop() > 60){
-            $('header').addClass('header-active');
-        }else{
-            $('header').removeClass('header-active');
-        }
-        
-    });
+    navbar.classList.toggle('active');
 
-});
+    menu.classList.toggle('move');
 
-/*=============== Banner ===============*
-const toastContainer = document.querySelector(".toast-container");
-const closeBtn = document.querySelector(".toast-container .close");
-const toastLink = document.querySelector(".toast-container a");
+    bell.classList.remove('active');
+
+}
+
+
+
+let bell = document.querySelector('.notification');
+
+
+
+document.querySelector('#bell-icon').onclick = () => {
+
+    bell.classList.toggle('active');
+
+}
+
+  window.onscroll = function() {mufunction()};
+
+
+
+  function mufunction() {
+
+    var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+
+    var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+    var scrolled = (winScroll / height) * 100;
+
+    document.getElementById('scroll-bar').style.width = scrolled + '%';
+
+
+  }
+
+
+  // Alert
+
+  const toastContainer = document.querySelector(".toast-container-new");
+const closeBtn = document.querySelector(".toast-container-new .close");
+const toastLink = document.querySelector(".toast-container-new a");
 
 if (!localStorage.getItem("displayToast")) {
   setTimeout(() => {
@@ -33,18 +57,9 @@ if (!localStorage.getItem("displayToast")) {
 }
 
 const stopDisplayingToast = () => {
-  /*=============== cookie ===============*
-  localStorage.setItem("displayToast", true);
-  /*=============== Notif ===============*
+  localStorage.setItem("displayToast", false);
   toastContainer.classList.remove("active");
 };
-/*=============== Notif ===============*
+
 closeBtn.addEventListener("click", stopDisplayingToast);
 toastLink.addEventListener("click", stopDisplayingToast);
-
-
-/*=============== Notif ===============*/
-
-function comingsoon() {
-  alert("This App Coming Soon");
-}
