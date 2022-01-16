@@ -1312,6 +1312,7 @@ font-size: 30px;
   border-radius: 5px;
   box-shadow: 0 5px 25px rgba(1 1 1 / 15%);
   transition: background 0.3s ease;
+  border-color: #2874F3;
 }
 
 .download-btn-timer:hover{
