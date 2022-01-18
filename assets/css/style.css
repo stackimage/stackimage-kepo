@@ -546,6 +546,18 @@ header{
 
 }
 
+.box video{
+
+    width: 99.5%;
+
+    height: auto;
+
+    object-fit:cover;
+
+    border-radius:0.5rem;
+
+}
+
 .box .box-text{
 
     position: absolute;
