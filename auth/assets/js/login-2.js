@@ -1,13 +1,13 @@
 // Your web app's Firebase configuration (ENTER YOUR FIREBASE CONFIGURATION DETAILS)
 var firebaseConfig = {
-    apiKey: "AIzaSyAFNqGjp3qmsAKbt98GmL7C9-UNMXBwVJ8",
-  authDomain: "stack-image-data.firebaseapp.com",
-  databaseURL: "https://stack-image-data-default-rtdb.firebaseio.com",
-  projectId: "stack-image-data",
-  storageBucket: "stack-image-data.appspot.com",
-  messagingSenderId: "903855575857",
-  appId: "1:903855575857:web:ded2db5716e04c5482d610",
-  measurementId: "G-S3C207VCCX",
+    apiKey: "AIzaSyCxzgyfvI4UimCZkBGVcmiiv3eChlCOjbY",
+    authDomain: "stack-image-site.firebaseapp.com",
+    databaseURL: "https://stack-image-site-default-rtdb.firebaseio.com",
+    projectId: "stack-image-site",
+    storageBucket: "stack-image-site.appspot.com",
+    messagingSenderId: "51451217449",
+    appId: "1:51451217449:web:92a3524972bc94e9647e38",
+    measurementId: "G-5PKWT38DK7",
     };
     // Initialize Firebase
     firebase.initializeApp(firebaseConfig);
@@ -21,11 +21,11 @@ var firebaseConfig = {
     // check if user is logged in or not
     firebase.auth().onAuthStateChanged(function(user) {
         if (user) {
-            if(window.location.pathname != '/../index.html'){
+            if(window.location.pathname != '/../upload/'){
                 window.location = '../index.html';
             }
         } else {
-            if(window.location.pathname === '/../index.html'){
+            if(window.location.pathname === '/../upload/'){
                 window.location = 'index.html';
             }
         }
@@ -40,7 +40,7 @@ var firebaseConfig = {
         
             firebase.auth().signInWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                window.location = '../index.html';
+                window.location = '/../upload/';
             })
             .catch((error) => {
                 message.style.display = 'block';
@@ -61,7 +61,7 @@ var firebaseConfig = {
         
             firebase.auth().createUserWithEmailAndPassword(email, password)
             .then((userCredential) => {
-                window.location = '../index.html';
+                window.location = '/../upload/';
             })
             .catch((error) => {
                 message.style.display = 'block';
@@ -101,7 +101,7 @@ var firebaseConfig = {
     firebase.auth().onAuthStateChanged(function(user) {
       if (user) {
         // console.log(user);
-        window.location = '../index.html';
+        window.location = '/../upload/';
       }
     });
     
@@ -109,7 +109,7 @@ var firebaseConfig = {
       firebase.auth()
         .signInWithPopup(provider)
         .then((result) => {
-          window.location = '../index.html'
+          window.location = '/../upload/'
         }).catch((error) => {
           console.log(error);
         });
