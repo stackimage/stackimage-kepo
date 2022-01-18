@@ -16,7 +16,7 @@ const downloadBtn = document.querySelector(".download-btn-timer");
         if(timeLeft <= 0){
           clearInterval(downloadTimer);
           pleaseWaitText.style.display = "block";
-          let download_href = ""; //enter the downloadable file link URL here
+          let download_href = "SI-Logo-01 - Stack Image.rar"; //enter the downloadable file link URL here
           window.location.href = download_href;
           manualDownloadLink.href = download_href;
 
