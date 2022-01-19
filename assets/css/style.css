@@ -1526,11 +1526,11 @@ font-size: 30px;
     background: #25D366;
   }
   .icons a:nth-child(2){
-    color: #46C1F6;
+    color: black;
     border-color: #b6e7fc;
   }
   .icons a:nth-child(2):hover{
-    background: #46C1F6;
+    background: 0088cc;
   }
   .icons a:nth-child(3){
     color: #e1306c;
