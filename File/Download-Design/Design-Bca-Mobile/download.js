@@ -31,21 +31,30 @@ const downloadBtn = document.querySelector(".download-btn-timer");
 
 
 
-    const shareData = {
-      title: 'Stack Image',
-      text: 'Download Design BCA Mobile | Stack Image',
-      url: 'https://www.stackimage.my.id/File/Download-Design/Design-Bca-Mobile/'
+    
+
+
+    const viewBtn = document.querySelector(".bx"),
+    popup = document.querySelector(".popup"),
+    close = popup.querySelector(".close"),
+    field = popup.querySelector(".field"),
+    input = field.querySelector("input"),
+    copy = field.querySelector("button");
+    viewBtn.onclick = ()=>{
+      popup.classList.toggle("show");
     }
-  
-    const btn = document.querySelector('button');
-    const resultPara = document.querySelector('.result');
-  
-    // Share must be triggered by "user activation"
-    btn.addEventListener('click', async () => {
-      try {
-        await navigator.share(shareData)
-        resultPara.textContent = 'MDN shared successfully'
-      } catch(err) {
-        resultPara.textContent = 'Error: ' + err
+    close.onclick = ()=>{
+      viewBtn.click();
+    }
+    copy.onclick = ()=>{
+      input.select(); //select input value
+      if(document.execCommand("copy")){ //if the selected text copy
+        field.classList.add("active");
+        copy.innerText = "Copied";
+        setTimeout(()=>{
+          window.getSelection().removeAllRanges(); //remove selection from document
+          field.classList.remove("active");
+          copy.innerText = "Copy";
+        }, 3000);
       }
-    });
+    }
