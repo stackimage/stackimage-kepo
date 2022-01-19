@@ -1465,6 +1465,22 @@ font-size: 30px;
                 opacity 0.2s 0s ease-in-out,
                 transform 0.2s 0s ease-in-out;
   }
+  
+  .popup-img{
+
+    position: relative;
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    margin-top: 1rem;
+
+}
   .popup :is(.share, .icons, .field){
     display: flex;
     align-items: center;
