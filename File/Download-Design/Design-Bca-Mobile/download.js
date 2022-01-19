@@ -60,7 +60,7 @@ parent.replaceChild(link, element);
 var element = document.getElementById("Telegram");
 var parent = element.parentNode;
 var link = document.createElement('a');
-link.href = 'https://telegram.me/share/url?url={url}&text={text}';
+link.href = 'https://telegram.me/share/url?text=Download%20Design%20BCA%20Mobile%20|%20Stack%20Image&url=https://www.stackimage.my.id/File/Download-Design/Design-Bca-Mobile/';
 link.appendChild(element.cloneNode(true));
 parent.replaceChild(link, element);
 // share telegram
