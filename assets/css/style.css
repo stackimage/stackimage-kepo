@@ -164,6 +164,12 @@ header{
 
 }
 
+.nav-icons .share{
+
+    border: none;
+
+}
+
 #bell-icon{
 
     position:relative;
