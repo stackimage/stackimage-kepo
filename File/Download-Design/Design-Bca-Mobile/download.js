@@ -46,6 +46,15 @@ const downloadBtn = document.querySelector(".download-btn-timer");
     close.onclick = ()=>{
       viewBtn.click();
     }
+
+    // share wa
+    var element = document.getElementById("Whatsapp");
+   var parent = element.parentNode; 
+   var link = document.createElement('a');
+   link.href = 'https://wa.me/?text=Download%20Design%20BCA%20Mobile%20|%20Stack%20Image%20https://www.stackimage.my.id/File/Download-Design/Design-Bca-Mobile/';
+   link.appendChild(element.cloneNode(true)); 
+   parent.replaceChild(link, element);
+    // share wa
     copy.onclick = ()=>{
       input.select(); //select input value
       if(document.execCommand("copy")){ //if the selected text copy
