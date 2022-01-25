@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Stack Image Ads</title>
+  <title>Stack Image | Ads</title>
 
   <!--
     - custom css link
@@ -19,6 +19,7 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600;700;800;900&family=Roboto:wght@400;500&display=swap"
     rel="stylesheet">
@@ -62,13 +63,13 @@
           <li class="nav-item">
             <a href="#contact">Contact Us</a>
           </li>
-
+          <button class="btn btn-primary" id="open-modal">
+            <p class="btn-text" id="open-modal">Upload Ads</p>
+            <span class="square"></span>
+          </button>
         </ul>
 
-        <button class="btn btn-primary">
-          <p class="btn-text">Upload Ads</p>
-          <span class="square"></span>
-        </button>
+        
 
         <button class="nav-toggle-btn">
           <span class="one"></span>
@@ -119,13 +120,13 @@
           </p>
 
           <div class="home-btn-group">
-            <button class="btn btn-primary">
-              <p class="btn-text">Upload Ads</p>
+            <button class="btn btn-primary" id="open-modal-2">
+              <p class="btn-text" id="open-modal-2">Upload Ads</p>
               <span class="square"></span>
             </button>
 
-            <button class="btn btn-secondary">
-              <p class="btn-text">Contact Us</p>
+            <button class="btn btn-secondary" id="open-modal-3">
+              <p class="btn-text" id="open-modal-3">Contact Us</p>
               <span class="square"></span>
             </button>
           </div>
@@ -157,7 +158,7 @@
 
       <!--
         - #COURSE CATEGORY SECTION
-      -->
+      --
 
       <section class="category">
 
@@ -296,7 +297,7 @@
 
       <!--
         - #ABOUT SECTION
-      -->
+      --
 
       <section class="about" id="about">
 
@@ -305,9 +306,9 @@
           <div class="img-box">
             <img src="./assets/images/about-img-bg.png" alt="about bg" class="about-bg">
 
-            <img src="./assets/images/about-img.png" alt="about person" class="about-img">
+            <img src="./assets/images/marketing.png" alt="about person" class="about-img">
 
-            <img src="./assets/images/banner-aliment-icon-1.png" alt="" class="icon-1 smooth-zigzag-anim-1" width="250">
+            <img src="./assets/images/upload On Website (1).png" alt="" class="icon-1 smooth-zigzag-anim-1" width="250">
             <img src="./assets/images/banner-aliment-icon-3.png" alt="" class="icon-2 smooth-zigzag-anim-3" width="195">
           </div>
 
@@ -317,35 +318,28 @@
 
           <p class="section-subtitle">About Us</p>
 
-          <h2 class="section-title">We Have Best Online Education</h2>
+          <h2 class="section-title">We Have The Best Ads</h2>
 
           <p class="section-text">
-            Morbi porttitor ligula id varius consectetur. Integer ipsum justo, congue sit amet massa vel, porttitor
-            semper magna.
-            Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+            We provide the best ad placement for you to make business improvement run smoothly.
           </p>
 
           <ul class="about-ul">
 
             <li>
               <ion-icon name="checkmark-circle"></ion-icon>
-              <p>Suspendisse nunc massa, pellentesque eu nibh eget.</p>
+              <p>Can request ad placement.</p>
             </li>
 
             <li>
               <ion-icon name="checkmark-circle"></ion-icon>
-              <p>Suspendisse nunc massa, pellentesque eu nibh eget.</p>
-            </li>
-
-            <li>
-              <ion-icon name="checkmark-circle"></ion-icon>
-              <p>Suspendisse nunc massa, pellentesque eu nibh eget.</p>
+              <p>Ads out during subscription.</p>
             </li>
 
           </ul>
 
           <button class="btn btn-primary">
-            <p class="btn-text">Explore More</p>
+            <p class="btn-text"></p>
             <span class="square"></span>
           </button>
 
@@ -359,7 +353,7 @@
 
       <!--
         - #COURSE SECTION
-      -->
+      --
 
       <section class="course" id="course">
 
@@ -678,7 +672,7 @@
 
       <!--
         - #EVENT SECTION
-      -->
+      --
 
       <section class="event">
 
@@ -772,7 +766,7 @@
 
       <!--
         - #FEATURES SECTION
-      -->
+      --
 
       <section class="features">
 
@@ -845,7 +839,7 @@
 
       <!--
         - #INSTRUCTOR SECTION
-      -->
+      --
 
       <section class="instructor">
 
@@ -969,7 +963,7 @@
 
       <!--
         - #TESTIMONIALS
-      -->
+      --
 
       <section class="testimonials">
 
@@ -1026,7 +1020,7 @@
 
       <!--
         - #BLOG
-      -->
+      --
 
       <section class="blog" id="blog">
 
@@ -1142,17 +1136,17 @@
 
       <!--
         - #CONTACT
-      -->
+      --><br><br><br><br><br><br><br><br><br>
 
       <section class="contact">
 
         <div class="contact-card" id="contact">
           <img src="./assets/images/cta-bg-img.png" alt="shape" class="contact-card-bg">
 
-          <h2>Start Your Best Online Classes With Us</h2>
+          <h2>Start Your Best Ads With Us</h2>
 
-          <button class="btn btn-primary">
-            <p class="btn-text">Contact Us</p>
+          <button class="btn btn-primary" id="open-modal-4">
+            <p class="btn-text" id="open-modal-4">Contact Us</p>
             <span class="square"></span>
           </button>
         </div>
@@ -1160,8 +1154,6 @@
       </section>
 
     </main>
-
-
 
 
 
@@ -1184,18 +1176,22 @@
           </p>
 
           <div class="social-link">
+            <!--Sosmed--
             <a href="#">
               <ion-icon name="logo-facebook"></ion-icon>
             </a>
-            <a href="#">
+            <!--Sosmed-->
+            <a href="https://www.instagram.com/stackimage.id/">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
-            <a href="#">
+            <!--Sosmed--
+            <a href="">
               <ion-icon name="logo-twitter"></ion-icon>
             </a>
             <a href="#">
               <ion-icon name="logo-youtube"></ion-icon>
             </a>
+            <!--Sosmed-->
           </div>
 
         </div>
@@ -1229,10 +1225,6 @@
         <ul class="grid-item">
 
           <h4 class="item-heading">Other Link</h4>
-
-          <li class="list-item">
-            <a href="#">Instructor</a>
-          </li>
 
           <li class="list-item">
             <a href="#">FAQ</a>
@@ -1277,8 +1269,26 @@
   </div>
 
 
+  <div class="modal__container" id="modal-container">
+    <div class="modal__content">
+        <div class="modal__close close-modal" title="Close">
+          <i class="ri-close-fill"></i>
+        </div>
 
+        <img src="assets/img/star-trophy.png" alt="" class="modal__img">
 
+        <h1 class="modal__title">Stack Image Ads</h1>
+        <p class="modal__description">This website is under development</p>
+
+        <button class="modal__button modal__button-width">
+            View status
+        </button>
+
+        <button class="modal__button-link close-modal">
+            Close
+        </button>
+    </div>
+</div>
 
   <!--
     - custom js link
