@@ -16,7 +16,7 @@ downloadBtn.addEventListener("click", () => {
     if (timeLeft <= 0) {
       clearInterval(downloadTimer);
       pleaseWaitText.style.display = "block";
-      let download_href = "Icon Instagram - Stack Image.rar"; //enter the downloadable file link URL here
+      let download_href = "Icon WhatsApp - Stack Image.rar"; //enter the downloadable file link URL here
       window.location.href = download_href;
       manualDownloadLink.href = download_href;
 
@@ -51,7 +51,7 @@ close.onclick = () => {
 var element = document.getElementById("Whatsapp");
 var parent = element.parentNode;
 var link = document.createElement('a');
-link.href = 'https://wa.me/?text=Download Icon Instagram | Stack Image https://www.stackimage.my.id/File/Download-Icon/Design-Icon-Instagram/';
+link.href = 'https://wa.me/?text=Download Icon WhatsApp | Stack Image https://www.stackimage.my.id/File/Download-Icon/Icon-WhatsApp/';
 link.appendChild(element.cloneNode(true));
 parent.replaceChild(link, element);
 // share wa
@@ -60,7 +60,7 @@ parent.replaceChild(link, element);
 var element = document.getElementById("Telegram");
 var parent = element.parentNode;
 var link = document.createElement('a');
-link.href = 'https://telegram.me/share/url?text=Download Icon Instagram | Stack Image&url=https://www.stackimage.my.id/File/Download-Icon/Design-Icon-Instagram/';
+link.href = 'https://telegram.me/share/url?text=Download Icon WhatsApp | Stack Image&url=https://www.stackimage.my.idFile/Download-Icon/Icon-WhatsApp/';
 link.appendChild(element.cloneNode(true));
 parent.replaceChild(link, element);
 // share telegram
