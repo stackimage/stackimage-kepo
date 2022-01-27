@@ -1,4 +1,3 @@
-// Loader
 var Pil = (function(){
 	"use strict";
 
