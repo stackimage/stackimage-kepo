@@ -1,14 +1,3 @@
-/*!
- * Sequence Loader Images without jQuery
- *
- * moulainfo
- *
- * From Lazy Load
- * Original by Mike Pulaski - http://www.mikepulaski.com
- * Modified by Kai Zau - http://kaizau.com
- *
- * finaly modified for css loader
- */
 (function() {
 	var addEventListener =
 		window.addEventListener ||
@@ -22,16 +11,8 @@
 		};
   
 	var imgLoader = {
-	  /* cache with img loader elements
-		   * 
-		   */
 	  cache: [],
   
-	  /* loadNextImage
-		   * change img source and register onLoad events
-		   * 
-		   * change class name in element for correct css
-		   */
 	  loadNextImages: function() {
 		if (imgLoader.cache.length > 0) {
 		  var image = imgLoader.cache[0];
@@ -39,7 +20,7 @@
 			this.className = this.className.replace(
 			  /(^|\s+)img-load(\s+|$)/,
 			  "$1img-loaded$2"
-			); //NOTE: mozna single quotw for regex
+			);
 			var loader = this.parentElement.getElementsByClassName("loading")[0];
 			loader.className = loader.className.replace(
 			  /(^|\s+)loading(\s+|$)/,
@@ -53,11 +34,6 @@
 		}
 	  },
   
-	  /* init
-		   * all image with data-src make loader
-		   * prepend css lader element
-		   * 
-		   */
 	  init: function() {
 		addEventListener("load", function _imgLoaderInit() {
 		  var imageNodes = document.querySelectorAll("img[data-src]");
@@ -82,14 +58,14 @@
 			"div.loading { min-height: 100px; }" +
 			"div.loading:after { content: 'Loading'; animation: loadingtext 5s infinite linear; display: block; text-align: center; font-size: 2em; padding-top: 20px; }" +
 			  "@keyframes loadingtext { 0% { content: 'Loading'; font-size: 2em; } 33% { content: 'Loading'; font-size: 1em; } 66% { content: 'Loading....'; font-size: 3em; } 100% { content: 'Loading..'; font-size: 2em; } }";
-  /*          
+          
 			"div.loading { width: 80px; height: 80px; background: lightgreen; position: relative; border-radius: 50%; margin: 10px auto; animation-duration: 0.75s; animation-name: animSpin; animation-timing-function: linear; animation-iteration-count: infinite; } " +
 			"@keyframes animSpin{ 50%{ transform: rotateZ(180deg) scale(.66); } 100%{ transform: rotateZ(360deg) scale(1); } } " +
 			"div.loading:before, div.loading:after{ content: ''; position: absolute; border: 8px solid transparent; border-radius: 50%; } " +
 			"div.loading:before{ width: 75%; height: 75%; background: rgba(255,255,255,.13); left: 12.5%; top: 12.5%; border-left: 8px solid rgba(255,255,255,.34); border-bottom: 8px solid rgba(255,255,255,.34); } " +
 			"div.loading:after{ width: 40%; height: 40%; left: 30%; top: 30%; border-right: 8px solid rgba(255,255,255,1); border-left: 8px solid rgba(255,255,255,1); border-bottom: 8px solid rgba(255,255,255,1); } ";
   
-  */
+
 		  // insert style as last element of head
 		  document.head.insertBefore(styleAdd, null);
   
