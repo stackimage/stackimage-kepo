@@ -1686,6 +1686,9 @@ font-size: 30px;
     background: #ddd;
     position: relative;
     overflow: hidden;
+    border-radius: 5px;
+    height: auto;
+    width: auto;
   }
   .pil img:first-of-type {
     display: block;
@@ -1697,9 +1700,11 @@ font-size: 30px;
     position: absolute;
     top: 0;
     left: 0;
+    height: auto;
     transition: opacity 0.3s ease-out;
     -webkit-filter: blur(30px);
     filter: blur(30px);
+    border-radius: 5px;
   }
   .pil-thumb.pil-thumb-loaded img { opacity: 1; }
   .pil-loaded .pil-thumb img { opacity: 0; }
