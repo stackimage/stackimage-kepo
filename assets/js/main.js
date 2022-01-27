@@ -1,72 +1,107 @@
-var Pil = (function(){
-	"use strict";
-
-	function _addClass(el, className) {
-		if (el.classList) {
-			el.classList.add(className);
-		} else {
-			el.className += ' ' + className;
+/*!
+ * Sequence Loader Images without jQuery
+ *
+ * moulainfo
+ *
+ * From Lazy Load
+ * Original by Mike Pulaski - http://www.mikepulaski.com
+ * Modified by Kai Zau - http://kaizau.com
+ *
+ * finaly modified for css loader
+ */
+(function() {
+	var addEventListener =
+		window.addEventListener ||
+		function(n, f) {
+		  window.attachEvent("on" + n, f);
+		},
+	  removeEventListener =
+		window.removeEventListener ||
+		function(n, f, b) {
+		  window.detachEvent("on" + n, f);
+		};
+  
+	var imgLoader = {
+	  /* cache with img loader elements
+		   * 
+		   */
+	  cache: [],
+  
+	  /* loadNextImage
+		   * change img source and register onLoad events
+		   * 
+		   * change class name in element for correct css
+		   */
+	  loadNextImages: function() {
+		if (imgLoader.cache.length > 0) {
+		  var image = imgLoader.cache[0];
+		  image.onload = function() {
+			this.className = this.className.replace(
+			  /(^|\s+)img-load(\s+|$)/,
+			  "$1img-loaded$2"
+			); //NOTE: mozna single quotw for regex
+			var loader = this.parentElement.getElementsByClassName("loading")[0];
+			loader.className = loader.className.replace(
+			  /(^|\s+)loading(\s+|$)/,
+			  "$1loaded$2"
+			);
+			imgLoader.loadNextImages();
+		  };
+		  image.src = image.getAttribute("data-src");
+		  image.removeAttribute("data-src");
+		  imgLoader.cache.splice(0, 1);
 		}
-	}
-
-	var ProgressiveImageLoading = {
-
-		init: function() {
-			var elements = document.querySelectorAll('.pil img');
-			Array.prototype.forEach.call(elements, function(el, i) {
-				var src = el.src;
-				el.setAttribute('data-src', src);
-				el.src = '';
-
-				var fullWidth  = el.getAttribute('data-full-width'),
-					fullHeight = el.getAttribute('data-full-height'),
-					newHeight = (fullHeight / fullWidth) * 100;
-
-				var thumbnailDiv = document.createElement('div'),
-					thumbnailImg = document.createElement('img'),
-					extension = src.split('.').pop();
-				_addClass(thumbnailDiv, 'pil-thumb');
-				thumbnailDiv.style.paddingBottom = newHeight + '%';
-				thumbnailImg.width = fullWidth;
-				thumbnailImg.height = fullHeight;
-				thumbnailDiv.appendChild(thumbnailImg);
-				el.parentNode.appendChild(thumbnailDiv);
-
-				var thumbSrc = el.getAttribute('data-pil-thumb-url');
-				if (!thumbSrc) {
-					thumbSrc = src.replace('.' + extension, '-thumb.' + extension);
-				}
-
-				var thumbImg = new Image;
-				thumbImg.src = thumbSrc;
-				thumbImg.onload = function() {
-					thumbnailImg.src = this.src;
-					setTimeout(function(){
-						_addClass(thumbnailDiv, 'pil-thumb-loaded');
-					}, 10);
-				}
-
-				var img = new Image;
-				img.src = src;
-				img.onload = function() {
-					el.src = this.src;
-					thumbnailDiv.style.paddingBottom = '0%';
-					setTimeout(function(){
-						_addClass(el.parentNode, 'pil-loaded');
-					}, 10);
-				}
-			});
-		}
-
+	  },
+  
+	  /* init
+		   * all image with data-src make loader
+		   * prepend css lader element
+		   * 
+		   */
+	  init: function() {
+		addEventListener("load", function _imgLoaderInit() {
+		  var imageNodes = document.querySelectorAll("img[data-src]");
+  
+		  for (var i = 0; i < imageNodes.length; i++) {
+			var imageNode = imageNodes[i];
+			imgLoader.cache.push(imageNode);
+			// add css class for loader
+			imageNode.classList.add("img-load");
+			// create div for css loader animation
+			var loadDiv = document.createElement("div");
+			loadDiv.classList.add("loading");
+			// prepend div loader before img
+			imageNode.parentElement.insertBefore(loadDiv, imageNode);
+		  }
+  
+		  // add css loader style to the document
+		  var styleAdd = document.createElement("style");
+		  styleAdd.innerHTML =
+			"img.img-load, div.loaded { display: none; } " +
+			"*, *:before, *:after {  box-sizing: border-box; } " +
+			"div.loading { min-height: 100px; }" +
+			"div.loading:after { content: 'Loading'; animation: loadingtext 5s infinite linear; display: block; text-align: center; font-size: 2em; padding-top: 20px; }" +
+			  "@keyframes loadingtext { 0% { content: 'Loading'; font-size: 2em; } 33% { content: 'Loading'; font-size: 1em; } 66% { content: 'Loading....'; font-size: 3em; } 100% { content: 'Loading..'; font-size: 2em; } }";
+  /*          
+			"div.loading { width: 80px; height: 80px; background: lightgreen; position: relative; border-radius: 50%; margin: 10px auto; animation-duration: 0.75s; animation-name: animSpin; animation-timing-function: linear; animation-iteration-count: infinite; } " +
+			"@keyframes animSpin{ 50%{ transform: rotateZ(180deg) scale(.66); } 100%{ transform: rotateZ(360deg) scale(1); } } " +
+			"div.loading:before, div.loading:after{ content: ''; position: absolute; border: 8px solid transparent; border-radius: 50%; } " +
+			"div.loading:before{ width: 75%; height: 75%; background: rgba(255,255,255,.13); left: 12.5%; top: 12.5%; border-left: 8px solid rgba(255,255,255,.34); border-bottom: 8px solid rgba(255,255,255,.34); } " +
+			"div.loading:after{ width: 40%; height: 40%; left: 30%; top: 30%; border-right: 8px solid rgba(255,255,255,1); border-left: 8px solid rgba(255,255,255,1); border-bottom: 8px solid rgba(255,255,255,1); } ";
+  
+  */
+		  // insert style as last element of head
+		  document.head.insertBefore(styleAdd, null);
+  
+		  imgLoader.loadNextImages();
+  
+		  removeEventListener("load", _imgLoaderInit, false);
+		});
+	  }
 	};
-
-	return {
-		init: ProgressiveImageLoading.init
-	}
-
-})();
-
-Pil.init();
+	imgLoader.init();
+  })();
+  
 //loader
 
 
