@@ -1,12 +1,12 @@
 const firebaseApp = firebase.initializeApp({
     apiKey: "AIzaSyCbfIND8mb0ggsHpV4bYtVCn5Qzt58U64o",
-    authDomain: "stack-image.firebaseapp.com",
-    databaseURL: "https://stack-image-default-rtdb.firebaseio.com",
-    projectId: "stack-image",
-    storageBucket: "stack-image.appspot.com",
-    messagingSenderId: "958868122247",
-    appId: "1:958868122247:web:38956a32407616e2faa622",
-    measurementId: "G-QG1DE7N0JD"
+  authDomain: "stack-image.firebaseapp.com",
+  databaseURL: "https://stack-image-default-rtdb.firebaseio.com",
+  projectId: "stack-image",
+  storageBucket: "stack-image.appspot.com",
+  messagingSenderId: "958868122247",
+  appId: "1:958868122247:web:38956a32407616e2faa622",
+  measurementId: "G-QG1DE7N0JD"
 });
 
 const auth = firebaseApp.auth();
@@ -150,7 +150,7 @@ const setUserInitialData = (user) => {
     })
         .then(() => {
             console.log("Document successfully written!");
-            window.location.href = "../index.html";
+            window.location.href = "./index.html";
             loader.style.display = "none"
         })
         .catch((error) => {
@@ -278,7 +278,7 @@ const typeCheck = (user) => {
             resdocRef.get().then((ressnapshot) => {
                 if (ressnapshot.data().type == "resturant") {
                     // console.log("resturant mil gya");
-                    window.location.href = "../resturantDash.html";
+                    window.location.href = "./resturantDash.html";
                     loader.style.display = "none"
                 }
             });
@@ -298,7 +298,7 @@ const logout = () => {
         // Sign-out successful.
         console.log("Sign-out successful.");
         loader.style.display = "none";
-        window.location.href = "../index.html"
+        window.location.href = "./index.html"
     }).catch((error) => {
         // An error happened.
         console.log(error);
@@ -343,7 +343,7 @@ const uploadImageSignup = (res) => {
         .then(url => {
             uploadImageFirestoreSignup(url, res)
             console.log(url);
-            window.location.href = "../index.html";
+            window.location.href = "./index.html";
             loader.style.display = "none";
         })
         .catch((err) => { console.log(err); swal(err) })
