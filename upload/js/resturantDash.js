@@ -133,3 +133,10 @@ const editItem = (id) => {
 //         delvcharlab.style.display = "none"
 //     }
 // }
+
+angular.module('ionicApp', ['ionic'])
+  .controller('MainCtrl', function ($scope) {
+    $scope.warn = function (message) {
+      alert(message);
+    };
+  });

@@ -130,3 +130,8 @@ body {
 }
 
 /*  */
+.swipe {
+  background-color: blue;
+  padding: 10px;
+  color: white;
+}
