@@ -135,3 +135,28 @@ body {
   padding: 10px;
   color: white;
 }
+.container {
+  background: var(--white);
+  max-width: 1440px;
+  margin: auto;
+  overflow: hidden;
+}
+
+
+.copyright{
+
+  
+
+  justify-content: space-between;
+
+  padding: 20px;
+
+}
+
+.copyright .copy{
+
+  font-size: 0.9rem;
+ text-align: center;
+  color: var(--text-color);
+
+}
