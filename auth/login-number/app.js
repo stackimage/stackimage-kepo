@@ -1,14 +1,14 @@
 // Your web app's Firebase configuration ENTER YOUR FIREBASE DETAILS HERE
 
 var firebaseConfig = {
-    apiKey: "AIzaSyCxzgyfvI4UimCZkBGVcmiiv3eChlCOjbY",
-    authDomain: "stack-image-site.firebaseapp.com",
-    databaseURL: "https://stack-image-site-default-rtdb.firebaseio.com",
-    projectId: "stack-image-site",
-    storageBucket: "stack-image-site.appspot.com",
-    messagingSenderId: "51451217449",
-    appId: "1:51451217449:web:92a3524972bc94e9647e38",
-    measurementId: "G-5PKWT38DK7"
+    apiKey: "AIzaSyCbfIND8mb0ggsHpV4bYtVCn5Qzt58U64o",
+    authDomain: "stack-image.firebaseapp.com",
+    databaseURL: "https://stack-image-default-rtdb.firebaseio.com",
+    projectId: "stack-image",
+    storageBucket: "stack-image.appspot.com",
+    messagingSenderId: "958868122247",
+    appId: "1:958868122247:web:38956a32407616e2faa622",
+    measurementId: "G-QG1DE7N0JD"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
