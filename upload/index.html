@@ -17,6 +17,7 @@
     <script src="https://www.swing2app.co.kr/swing_public_src/2021_07_08_001/js/swing_app_on_web.js?20191128"></script>
 
     <!-- Bootstrap icon -->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
     <!-- Css Styling -->
     <link rel="stylesheet" href="css/navbar.css">
@@ -94,7 +95,15 @@
                                 aria-describedby="emailHelp" required>
                         </div>
                         <br>
-                        <div class="swipe" on-swipe-left="warn('Must use scope')">Hanya Dapat 1 Foto Dalam Mengirim</div>
+
+                            <input type="checkbox" id="one" class="hidden" name="ossm">  
+                            <label for="one" class="alert-message">
+                              <strong> <i class="ri-notification-line"></i> Alert</strong> Hanya Dapat Mengirim 1 Gambar Dalam Mengirim
+                              <span class="close">×</button>
+                            </label> 
+
+                          
+                          
                         <br>
                         <!-- <div class="form-outline">
                             <label for="resDeliveryType" class="form-label">Delivery Type</label>
